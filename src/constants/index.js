@@ -15,14 +15,14 @@ import {
     git,
     figma,
     docker,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
+    Codsoft,
+    Udemy,
     carrent,
     jobit,
     tripguide,
     threejs,
+    Wxora,
+    Freecodecamp,
   } from "../assets";
   
   export const navLinks = [
@@ -81,10 +81,6 @@ import {
       icon: reactjs,
     },
     {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
-    {
       name: "Tailwind CSS",
       icon: tailwind,
     },
@@ -108,17 +104,14 @@ import {
       name: "figma",
       icon: figma,
     },
-    {
-      name: "docker",
-      icon: docker,
-    },
+   
   ];
   
   const experiences = [
     {
       title: "Software Engineer Intern",
       company_name: "Codsoft",
-      icon: starbucks,
+      icon: Codsoft,
       iconBg: "#383E56",
       date: "August 2024 - September 2024",
       points: [
@@ -128,7 +121,7 @@ import {
     {
       title: "Full-Stack Development Course",
       company_name: "Udemy - Taught by Yahya Nabil ElAraby",
-      icon: tesla,
+      icon: Udemy,
       iconBg: "#E6DEDD",
       date: "Completed October 2024",
       points: [
@@ -139,7 +132,7 @@ import {
     {
       title: "JavaScript Algorithms & Data Structures",
       company_name: "freeCodeCamp",
-      icon: shopify,
+      icon: Freecodecamp,
       iconBg: "#383E56",
       date: "Issued July 2023 - Expired September 2023",
       points: [
@@ -152,7 +145,7 @@ import {
     {
       title: "MERN Stack Web Development",
       company_name: "Wxora",
-      icon: meta,
+      icon: Wxora,
       iconBg: "#E6DEDD",
       date: "Issued September 2023 - Expired October 2023",
       points: [
