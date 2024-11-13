@@ -30,7 +30,7 @@ import Wxora from "./company/Wxora.png";
 import Codsoft from "./company/Codsoft.png";
 import Freecodecamp from "./company/Freecodecamp.png" ;
 
-import carrent from "./carrent.png";
+import SprintMinds from "./SprintMinds.png"
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
@@ -60,11 +60,11 @@ export {
   shopify,
   starbucks,
   tesla,
-  carrent,
   jobit,
   tripguide,
   Udemy,
   Wxora,
   Codsoft,
   Freecodecamp,
+  SprintMinds,
 };

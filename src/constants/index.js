@@ -15,12 +15,12 @@ import {
     figma,
     Codsoft,
     Udemy,
-    carrent,
     jobit,
     tripguide,
     threejs,
     Wxora,
     Freecodecamp,
+    SprintMinds,
   } from "../assets";
   
   export const navLinks = [
@@ -185,7 +185,7 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "Sprint Minds E-commerce Project",
       description:
         "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
       tags: [
@@ -197,18 +197,24 @@ import {
           name: "mongodb",
           color: "green-text-gradient",
         },
+        
         {
-          name: "tailwind",
+          name: "javascript",
+          color: "orange-text-gradient",
+        },
+        {
+          name: "node",
           color: "pink-text-gradient",
         },
+      
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: SprintMinds,
+      source_code_link: "https://github.com/Abdelrahmanghoniem/E-Commerce_Mern/",
     },
     {
-      name: "Job IT",
+      name: "NULL",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "........:",
       tags: [
         {
           name: "react",
@@ -227,9 +233,9 @@ import {
       source_code_link: "https://github.com/",
     },
     {
-      name: "Trip Guide",
+      name: "NULL",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        ".....:",
       tags: [
         {
           name: "nextjs",
