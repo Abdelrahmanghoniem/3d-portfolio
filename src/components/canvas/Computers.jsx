@@ -67,10 +67,10 @@ const ComputersCanvas = () => {
   return(
   <Canvas
   frameloop="demand"
-  shadows
+  shadows={!isMobile} // Disable shadows on mobile
   dpr={[1,2]}
   camera={{position:[20,3,5],fov:25}}
-  gl={{preserveDrawingBuffer:true}}
+  gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance", antialias: true, version: 1 }}
   >
     <Suspense fallback={<CanvasLoader/>}>
     <OrbitControls
