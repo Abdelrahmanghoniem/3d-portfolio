@@ -29,9 +29,12 @@ const Hero = () => {
           </div>
 
       </div>
-      
-      <ComputersCanvas/>
+      {/* Only show ComputersCanvas on medium and larger screens */}
+      <div className="hidden md:block">
+        <ComputersCanvas/>
+      </div>
 
+     
       <div className="absolute xs:bottom-10 bottom-20
       w-full flex justify-center items-center
       ">
