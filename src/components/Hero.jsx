@@ -58,7 +58,7 @@ const Hero = () => {
           </div>
           <div className="absolute bottom-10 w-full text-center">
             <p className="text-white text-sm bg-[#333333] p-2 rounded-md mx-4">
-              Open in desktop mode for a better view
+              Open in desktop for a better view
             </p>
           </div>
         </>
