@@ -1,13 +1,30 @@
 import {motion} from 'framer-motion'
 import {styles} from '../styles'
 import { ComputersCanvas } from "./canvas";
+import { useEffect, useState } from 'react';
+
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check screen width on initial load and update `isMobile` state
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint in Tailwind
+    };
+
+    handleResize(); // Call on initial load
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <section className={`relative w-full h-screen mx-auto`}>
+      
 
       <div className={`${styles.paddingX} absolute
       inset-0 top-[120px] max-w-7xl mx-auto flex
       flex-row items-start gap-5`}>
+        
         <div className='flex flex-col
         justify-center items-center mt-5'>
 
@@ -26,13 +43,27 @@ const Hero = () => {
             interfaces and web applications 
 
           </p>
+          
           </div>
+          
 
       </div>
-      {/* Only show ComputersCanvas on medium and larger screens */}
-      <div className="hidden md:block">
-        <ComputersCanvas/>
-      </div>
+    
+      {!isMobile && <ComputersCanvas />}
+      {/* Dotted circle and message for mobile users */}
+      {isMobile && (
+        <>
+          <div className="absolute inset-1 flex items-center justify-center">
+          <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-[500px] h-[500px] rounded-full border-4 border-dotted border-[#915eff]" />
+          </div>
+          <div className="absolute bottom-10 w-full text-center">
+            <p className="text-white text-sm bg-[#333333] p-2 rounded-md mx-4">
+              Open in desktop for a better view
+            </p>
+          </div>
+        </>
+      )}
+
 
      
       <div className="absolute xs:bottom-10 bottom-20
