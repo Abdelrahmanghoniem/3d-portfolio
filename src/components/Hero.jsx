@@ -60,7 +60,6 @@ const Hero = () => {
             <p className="text-white text-sm bg-[#333333] p-2 rounded-md mx-4">
               Open in desktop for a better view
             </p>
-            <h>you can also run it on mozilla fire fox desktop mode</h>
           </div>
         </>
       )}
