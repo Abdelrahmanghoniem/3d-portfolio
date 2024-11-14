@@ -1,28 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class ErrorBoundary extends Component {
+class CanvasErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(error) {
-    // Update state so the next render shows the fallback UI
+    // Update state to trigger fallback UI
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
-    // You can log the error to an error reporting service here if needed
-    console.error("Error caught in ErrorBoundary:", error, errorInfo);
+    console.error("Canvas rendering failed:", error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
-      // Render fallback UI if there's an error
-      return this.props.fallback;
+      return this.props.fallback; // Render fallback UI if error occurs
     }
-    return this.props.children;
+    return this.props.children; // Render `ComputersCanvas` otherwise
   }
 }
 
-export default ErrorBoundary;
+// Define PropTypes to validate props
+CanvasErrorBoundary.propTypes = {
+  fallback: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+export default CanvasErrorBoundary;
