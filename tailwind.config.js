@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export const content = ["./src/**/*.{js,jsx}"];
+export const content = ["./src/**/*.{js,jsx,ts,tsx,html}"];
 export const mode = "jit";
 export const theme = {
   extend: {
@@ -15,6 +15,7 @@ export const theme = {
       card: "0px 35px 120px -15px #211e35",
     },
     screens: {
+      xxs: "320px", 
       xs: "450px",
     },
     backgroundImage: {
