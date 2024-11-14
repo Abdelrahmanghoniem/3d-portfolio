@@ -40,7 +40,7 @@ const Hero = () => {
           rounded-3xl border-4 border-secondary
           flex justify-center items-start p-2
           ">
-            <motion.dev
+            <motion.div
               animate={{
                 y:[0,24,0]
               }}

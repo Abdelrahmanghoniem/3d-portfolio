@@ -1,3 +1,4 @@
+"/* eslint-env node */"
 /** @type {import('tailwindcss').Config} */
 export const content = ["./src/**/*.{js,jsx,ts,tsx,html}"];
 export const mode = "jit";

@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { Suspense, useEffect, useState } from "react";
+import React , { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
@@ -10,7 +10,7 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={1.65} groundColor="black" />
+      <hemisphereLight intensity={4} groundColor="black" />
       <pointLight intensity={0.30} />
 
       {/* Conditionally render or adjust spotLight for non-mobile */}
