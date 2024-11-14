@@ -54,7 +54,7 @@ const Hero = () => {
       {isMobile && (
         <>
           <div className="absolute inset-1 flex items-center justify-center">
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-[412px] h-[400px] rounded-full border-4 border-dotted border-[#915eff]" />
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-[410px] h-[390px] rounded-full border-4 border-dotted border-[#915eff]" />
           </div>
           <div className="absolute bottom-10 w-full text-center">
             <p className="text-white text-sm bg-[#333333] p-2 rounded-md mx-4">
