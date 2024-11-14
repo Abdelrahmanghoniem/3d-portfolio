@@ -16,7 +16,6 @@ module.exports ={root: true,
                           plugins: ['react-refresh'],
                            rules: { 'react-refresh/only-export-components': 
                             [ 'warn', { allowConstantExport: true }, ],
-                         "react/no-unknown-property": ["error", { ignore: ["jsx"], ["css"] }],
 
 }, }
 
