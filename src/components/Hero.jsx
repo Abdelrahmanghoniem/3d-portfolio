@@ -20,19 +20,17 @@ const mobileFallback = (
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [showFallback, setShowFallback] = useState(false);
+
 
   useEffect(() => {
-    // Check screen width on initial load and update `isMobile` state
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint in Tailwind
-    };
-
-
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     handleResize(); // Call on initial load
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       
@@ -67,16 +65,16 @@ const Hero = () => {
 
 
       
-      {/* ErrorBoundary to catch render errors, showing fallback UI on low-end mobile devices */}
+   {/* Error Boundary for 3D Model */}
       <ErrorBoundary fallback={mobileFallback}>
-        <Suspense fallback={<div>Loading...</div>}>
-          <ComputersCanvas
-            antialias={!isMobile} // Use antialiasing for non-mobile devices
-            pixelRatio={isMobile ? 1 : 2} // Lower pixel ratio for mobile devices
-          />
-        </Suspense>
+        {isMobile && showFallback ? (
+          mobileFallback
+        ) : (
+          <Suspense fallback={null}>
+            <ComputersCanvas />
+          </Suspense>
+        )}
       </ErrorBoundary>
-      
      
 
 
