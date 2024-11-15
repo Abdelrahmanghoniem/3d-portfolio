@@ -72,7 +72,6 @@ const Hero = () => {
 
       </div>
 
-
       
    {/* Conditionally render the fallback or ComputersCanvas based on device type */}
    {isAndroid ? (
@@ -81,11 +80,8 @@ const Hero = () => {
             {mobileFallback}
           </CanvasErrorBoundary>
         </div>
-      ) : isMobile ? (
-        <CanvasErrorBoundary fallback={mobileFallback}>
-          <ComputersCanvas />
-        </CanvasErrorBoundary>
-      ) : (
+      ) 
+      : (
         <ComputersCanvas />
       )}
 

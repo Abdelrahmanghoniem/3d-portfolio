@@ -24,8 +24,8 @@ const Computers = ({ isMobile }) => {
       
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.7}
-        position={isMobile ? [0, -3.5, -1.5] : [0, -3.8, -1.5]}
+        scale={isMobile ? 0.4 : 0.7}
+        position={isMobile ? [0, -2.3, -1.5] : [0, -3.4, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -54,6 +54,7 @@ const ComputersCanvas = () => {
       dpr={[1,2]} // Reduce pixel ratio on mobile
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
+      
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
