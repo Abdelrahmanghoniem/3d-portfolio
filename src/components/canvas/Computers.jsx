@@ -35,8 +35,18 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-const ComputersCanvas = () => {
+const ComputersCanvas = (onModelLoaded) => {
   const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    // Simulate model loading completion and call onModelLoaded when done
+    const loadModel = async () => {
+      // Here, add actual model loading logic
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // Example delay
+      if (onModelLoaded) onModelLoaded();
+    };
+    loadModel();
+  }, []);
+
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");

@@ -2,7 +2,7 @@ import {motion} from 'framer-motion'
 import {styles} from '../styles'
 import { ComputersCanvas } from "./canvas";
 import { Suspense, useEffect, useState } from 'react';
-import ErrorBoundary from './ErrorBoundary';
+import CanvasErrorBoundary from './ErrorBoundary';
 
 const mobileFallback = (
   <>
@@ -66,7 +66,7 @@ const Hero = () => {
 
       
    {/* Error Boundary for 3D Model */}
-      <ErrorBoundary fallback={mobileFallback}>
+      <CanvasErrorBoundary fallback={mobileFallback}>
         {isMobile && showFallback ? (
           mobileFallback
         ) : (
@@ -74,7 +74,7 @@ const Hero = () => {
             <ComputersCanvas />
           </Suspense>
         )}
-      </ErrorBoundary>
+      </CanvasErrorBoundary>
      
 
 
