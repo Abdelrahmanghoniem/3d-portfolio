@@ -1,8 +1,21 @@
 import {motion} from 'framer-motion'
 import {styles} from '../styles'
 import { ComputersCanvas } from "./canvas";
-import { useEffect, useState } from 'react';
-import CanvasErrorBoundary from './CanvasErrorBoundary';
+import { Suspense, useEffect, useState } from 'react';
+import ErrorBoundary from './ErrorBoundary';
+
+const mobileFallback = (
+  <>
+    <div className="absolute inset-1 flex items-center justify-center">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-[355px] h-[330px] rounded-full border-4 border-dotted border-[#915eff]" />
+    </div>
+    <div className="absolute bottom-10 w-full text-center">
+      <p className="text-white text-sm bg-[#333333] p-2 rounded-md mx-4">
+        Open in desktop for a better view
+      </p>
+    </div>
+  </>
+);
 
 
 const Hero = () => {
@@ -52,22 +65,12 @@ const Hero = () => {
       </div>
 
 
-    
-            <CanvasErrorBoundary fallback={
-        <>
-          {/* Fallback UI for low-end mobile devices */}
-          <div className="absolute inset-1 flex items-center justify-center">
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 w-[355px] h-[330px] rounded-full border-4 border-dotted border-[#915eff]" />
-          </div>
-          <div className="absolute bottom-10 w-full text-center">
-            <p className="text-white text-sm bg-[#333333] p-2 rounded-md mx-4">
-              Open in desktop for a better view
-            </p>
-          </div>
-        </>
-      }>
-        {!isMobile && <ComputersCanvas />}
-      </CanvasErrorBoundary>
+    <Suspense>
+      <ErrorBoundary fallback={mobileFallback}>
+        <ComputersCanvas />
+      </ErrorBoundary>
+     
+
 
 
      
@@ -91,12 +94,15 @@ const Hero = () => {
               className='w-3 h-3 rounded-full bg-secondary mb-1'
 
               />
+              
 
           </div>
         </a>
+        
 
       </div>
 
+      </Suspense>
     </section>
   )
 }
