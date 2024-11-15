@@ -66,9 +66,9 @@ const Hero = () => {
 
 
     <Suspense>
-      <ErrorBoundary fallback={mobileFallback}>
+      
         <ComputersCanvas />
-      </ErrorBoundary>
+      
      
 
 
