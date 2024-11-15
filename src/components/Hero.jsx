@@ -27,6 +27,7 @@ const Hero = () => {
       setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint in Tailwind
     };
 
+
     handleResize(); // Call on initial load
     window.addEventListener("resize", handleResize);
 
@@ -65,9 +66,16 @@ const Hero = () => {
       </div>
 
 
-    <Suspense>
       
-        <ComputersCanvas />
+      {/* ErrorBoundary to catch render errors, showing fallback UI on low-end mobile devices */}
+      <ErrorBoundary fallback={mobileFallback}>
+        <Suspense fallback={<div>Loading...</div>}>
+          <ComputersCanvas
+            antialias={!isMobile} // Use antialiasing for non-mobile devices
+            pixelRatio={isMobile ? 1 : 2} // Lower pixel ratio for mobile devices
+          />
+        </Suspense>
+      </ErrorBoundary>
       
      
 
@@ -102,7 +110,6 @@ const Hero = () => {
 
       </div>
 
-      </Suspense>
     </section>
   )
 }

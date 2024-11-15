@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
+
 // eslint-disable-next-line react/prop-types
 const Computers = ({ isMobile }) => {
   const computer = useGLTF('./desktop_pc/scene.gltf');
@@ -35,7 +36,7 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-const ComputersCanvas = () => {
+const ComputersCanvas = ({ antialias, pixelRatio }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -52,11 +53,12 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
+
       frameloop={isMobile ? "always" : "always"} // Reduce render loop on mobile
       shadows
-      dpr={[1, isMobile ? 1.5 : 2]} // Reduce pixel ratio on mobile
+      dpr={pixelRatio}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
+      gl={{ preserveDrawingBuffer: true,antialias, powerPreference: "high-performance" }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -71,5 +73,7 @@ const ComputersCanvas = () => {
     </Canvas>
   );
 };
+
+
 
 export default ComputersCanvas;
