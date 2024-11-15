@@ -21,15 +21,23 @@ const mobileFallback = (
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isAndroid, setIsAndroid] = useState(false);
+
 
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth < 768);
-    handleResize(); // Call on initial load
-    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    const userAgent = navigator.userAgent.toLowerCase();
+    const androidCheck = /android/i.test(userAgent);
+    setIsAndroid(androidCheck); // Check if the device is Android
+
+    handleResize(); // Call on initial load
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
+
 
   return (
     <section className={`relative w-full h-screen mx-auto`}>
@@ -65,15 +73,21 @@ const Hero = () => {
 
 
       
-   {/* Error Boundary for 3D Model */}
-   {isMobile ? (
+   {/* Conditionally render the fallback or ComputersCanvas based on device type */}
+   {isAndroid ? (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <CanvasErrorBoundary fallback={mobileFallback}>
+            {mobileFallback}
+          </CanvasErrorBoundary>
+        </div>
+      ) : isMobile ? (
         <CanvasErrorBoundary fallback={mobileFallback}>
           <ComputersCanvas />
         </CanvasErrorBoundary>
       ) : (
         <ComputersCanvas />
       )}
-          
+
         
      
 
