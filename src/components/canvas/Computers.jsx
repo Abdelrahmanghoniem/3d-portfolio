@@ -1,9 +1,8 @@
 /* eslint-disable react/no-unknown-property */
-import React , { Suspense, useEffect, useState } from "react";
+import  { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
-
 
 // eslint-disable-next-line react/prop-types
 const Computers = ({ isMobile }) => {
@@ -36,7 +35,7 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-const ComputersCanvas = ({ antialias, pixelRatio }) => {
+const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -53,12 +52,11 @@ const ComputersCanvas = ({ antialias, pixelRatio }) => {
 
   return (
     <Canvas
-
       frameloop={isMobile ? "always" : "always"} // Reduce render loop on mobile
       shadows
-      dpr={pixelRatio}
+      dpr={[1, isMobile ? 0.5: 2]} // Reduce pixel ratio on mobile
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true,antialias, powerPreference: "high-performance" }}
+      gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -73,7 +71,5 @@ const ComputersCanvas = ({ antialias, pixelRatio }) => {
     </Canvas>
   );
 };
-
-
 
 export default ComputersCanvas;
