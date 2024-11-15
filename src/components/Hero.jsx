@@ -4,6 +4,7 @@ import { ComputersCanvas } from "./canvas";
 import { Suspense, useEffect, useState } from 'react';
 import CanvasErrorBoundary from './ErrorBoundary';
 
+
 const mobileFallback = (
   <>
     <div className="absolute inset-1 flex items-center justify-center">
@@ -20,7 +21,6 @@ const mobileFallback = (
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [showFallback, setShowFallback] = useState(false);
 
 
   useEffect(() => {
@@ -66,15 +66,15 @@ const Hero = () => {
 
       
    {/* Error Boundary for 3D Model */}
-      <CanvasErrorBoundary fallback={mobileFallback}>
-        {isMobile && showFallback ? (
-          mobileFallback
-        ) : (
-          <Suspense fallback={null}>
-            <ComputersCanvas />
-          </Suspense>
-        )}
-      </CanvasErrorBoundary>
+   {isMobile ? (
+        <CanvasErrorBoundary fallback={mobileFallback}>
+          <ComputersCanvas />
+        </CanvasErrorBoundary>
+      ) : (
+        <ComputersCanvas />
+      )}
+          
+        
      
 
 
