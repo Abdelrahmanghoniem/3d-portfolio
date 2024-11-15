@@ -27,8 +27,8 @@ const Computers = ({ isMobile }) => {
 
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.4 : 0.7}
-        position={isMobile ? [0, -2.5, -1.5] : [0, -3.25, -1.5]}
+        scale={isMobile ? 0.5 : 0.7}
+        position={isMobile ? [0, -3.5, -1.5] : [0, -3.8, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
@@ -54,7 +54,7 @@ const ComputersCanvas = () => {
     <Canvas
       frameloop={isMobile ? "always" : "always"} // Reduce render loop on mobile
       shadows
-      dpr={[1, isMobile ? 0.5: 2]} // Reduce pixel ratio on mobile
+      dpr={[1, isMobile ? 1:2]} // Reduce pixel ratio on mobile
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true, powerPreference: "high-performance" }}
     >
