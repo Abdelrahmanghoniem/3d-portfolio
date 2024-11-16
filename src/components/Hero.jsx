@@ -1,7 +1,7 @@
 import {motion} from 'framer-motion'
 import {styles} from '../styles'
 import { ComputersCanvas } from "./canvas";
-import { Suspense, useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import CanvasErrorBoundary from './ErrorBoundary';
 
 
