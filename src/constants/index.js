@@ -36,6 +36,12 @@ import {
       id: "contact",
       title: "Contact",
     },
+    {
+      id: "download",
+      title: "Download",
+      href: "https://drive.google.com/uc?export=download&id=1mLyb7gdKbSJBYieFAN1G8iKgHuxe-Vqq"
+      
+    },
   ];
   
   const services = [
