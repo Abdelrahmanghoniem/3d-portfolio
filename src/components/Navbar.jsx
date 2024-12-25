@@ -39,7 +39,7 @@ const Navbar = () => {
             >
               {link.id === "download" ? (
                 <a
-                  href="https://drive.google.com/file/d/1mLyb7gdKbSJBYieFAN1G8iKgHuxe-Vqq/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/11_5Vwgygn784gpFzRrxm4unp2w_q10ri/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -79,7 +79,7 @@ const Navbar = () => {
                 >
                   {link.id === "download" ? (
                     <a
-                      href="https://drive.google.com/file/d/1mLyb7gdKbSJBYieFAN1G8iKgHuxe-Vqq/view?usp=drive_link"
+                      href="https://drive.google.com/file/d/11_5Vwgygn784gpFzRrxm4unp2w_q10ri/view?usp=drive_link"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
