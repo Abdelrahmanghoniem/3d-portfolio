@@ -21,7 +21,7 @@ const mobileFallback = (
 
 
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [, setIsMobile] = useState(false);
   const [isAndroid, setIsAndroid] = useState(false);
 
 

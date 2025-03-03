@@ -33,6 +33,8 @@ import Freecodecamp from "./company/Freecodecamp.png" ;
 import SprintMinds from "./SprintMinds.png"
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import Springboot from "./tech/SpringBoot.png"
+
 
 export {
   logo,
@@ -67,4 +69,6 @@ export {
   Codsoft,
   Freecodecamp,
   SprintMinds,
+  Springboot,
+  
 };

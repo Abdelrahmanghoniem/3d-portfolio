@@ -5,8 +5,6 @@ import {
     web,
     javascript,
     typescript,
-    html,
-    css,
     reactjs,
     tailwind,
     nodejs,
@@ -21,6 +19,7 @@ import {
     Wxora,
     Freecodecamp,
     SprintMinds,
+    Springboot,
   } from "../assets";
   
   export const navLinks = [
@@ -65,12 +64,8 @@ import {
   
   const technologies = [
     {
-      name: "HTML 5",
-      icon: html,
-    },
-    {
-      name: "CSS 3",
-      icon: css,
+      name:"SpringBoot",
+      icon:Springboot,
     },
     {
       name: "JavaScript",
@@ -159,6 +154,19 @@ import {
 "Developed projects from scratch, applying full-stack knowledge to create dynamic web applications."
 
       ],
+    },
+    {
+      title: "[NEW] Spring Boot 3, Spring 6 & Hibernate for Beginners",
+      company_name: "Udemy - Taught by Chad Darby",
+      icon: Udemy,
+      iconBg: "#E6DEDD",
+      date: "Completed february 2025",
+      points: [
+"Gained hands-on experience in building RESTful APIs using Spring Boot 3 and Hibernate.",
+"Developed a strong understanding of Spring Boot architecture and its integration with databases.",
+"Implemented authentication and authorization using Spring Security 6 and JWT.",
+"Built real-world projects, applying Spring Boot and Hibernate to create scalable applications."],
+      
     },
   ];
   
