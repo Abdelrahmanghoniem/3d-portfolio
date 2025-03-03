@@ -64,7 +64,7 @@ import {
   
   const technologies = [
     {
-      name:"SpringBoot",
+      name:"Springboot",
       icon:Springboot,
     },
     {
